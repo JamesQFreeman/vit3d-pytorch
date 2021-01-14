@@ -9,6 +9,9 @@ $ pip install vit-pytorch
 
 ## Usage
 ```
+import torch
+from vit3d_pytorch import ViT3D
+
 v3d = ViT3D(
         image_size=(256, 256, 64),
         patch_size=32,
@@ -20,7 +23,7 @@ v3d = ViT3D(
         dropout=0.1,
         emb_dropout=0.1
     )
-    img3d = torch.randn(1, 1, 256, 256, 64)
-    preds = v3d(img3d)
-    print("ViT3D output size:", preds.shape)
+img3d = torch.randn(1, 1, 256, 256, 64)
+preds = v3d(img3d)
+print("ViT3D output size:", preds.shape)
 ```
